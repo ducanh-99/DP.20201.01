@@ -22,6 +22,7 @@ public class DeliveryInfo {
     }
 
     public int calculateShippingFee(Order order) {	//Vi pham nguyen tac Stamp Coupling
+    //boi vi truyen doi tuong order vao nhung khong su dung cac thuoc tinh cua doi tuong nay
         int distance = distanceCalculator.calculateDistance(address, province);
         return (int) (distance * 1.2);
     }
