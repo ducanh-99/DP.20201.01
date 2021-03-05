@@ -3,10 +3,7 @@ import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import views.screen.BaseScreenHandler;
@@ -29,7 +26,7 @@ public class App extends Application {
 
 			// Load splash screen with fade in effect
 			FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), introScreen.getContent());
-			fadeIn.setFromValue(0);
+			fadeIn.setFromValue(0);	//Vi pham nguyen tac Content Coupling: Thay doi truc tiep du lieu cua lop FadeTransition
 			fadeIn.setToValue(1);
 			fadeIn.setCycleCount(1);
 
@@ -47,7 +44,7 @@ public class App extends Application {
 
 			// After fade out, load actual content
 			fadeOut.setOnFinished((e) -> {
-				try {
+				try {//Vi pham nguyen tac Content Coupling: Thay doi truc tiep du lieu cua lop HomeScreenHandler
 					HomeScreenHandler homeHandler = new HomeScreenHandler(primaryStage, ViewsConfig.HOME_PATH);
 					homeHandler.setScreenTitle("Home Screen");
 					homeHandler.setImage();
