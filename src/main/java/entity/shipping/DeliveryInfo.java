@@ -21,7 +21,7 @@ public class DeliveryInfo {
         this.distanceCalculator = distanceCalculator;
     }
 
-    public int calculateShippingFee(Order order) {
+    public int calculateShippingFee(Order order) {	//Vi pham nguyen tac Stamp Coupling
         int distance = distanceCalculator.calculateDistance(address, province);
         return (int) (distance * 1.2);
     }
