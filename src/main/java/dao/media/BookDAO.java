@@ -24,7 +24,7 @@ public class BookDAO extends MediaDAO {
         Statement stm = AIMSDB.getConnection().createStatement();
         ResultSet res = stm.executeQuery(sql);
         if(res.next()) {
-
+        	//Logical Cohesion
             // from Media table
             String title = "";
             String type = res.getString("type");
