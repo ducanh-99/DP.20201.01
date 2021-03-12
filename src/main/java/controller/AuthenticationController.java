@@ -18,6 +18,11 @@ import java.util.Objects;
 /**
  * @author
  */
+
+/*
+    ducanh
+    Temporal Cohesion: 3 is checking, or using when login, md5 is not related in Authentication
+*/
 public class AuthenticationController extends BaseController {
 
     public boolean isAnonymousSession() {
