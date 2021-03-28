@@ -8,6 +8,10 @@ import java.util.logging.Logger;
 import java.sql.Connection;
 import utils.*;
 
+/*
+    Db is coincidental cohesion so it's not related to the package entity, 
+    it must belong to db or connect package
+*/
 public class AIMSDB {
 
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());
