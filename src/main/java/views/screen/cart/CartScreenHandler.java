@@ -52,7 +52,6 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 	@FXML
 	private Button btnPlaceOrder;
-	//content
 
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
