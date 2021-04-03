@@ -13,7 +13,7 @@ import entity.payment.PaymentTransaction;
 */
 public class InterbankSubsystemController {
 
-	private static InterbankPayloadConverter interbankPayloadConverter = new InterbankPayloadConverter();
+	private static InterbankPayloadConverter interbankPayloadConverter = InterbankPayloadConverter.getInstance();
 	private static InterbankBoundary interbankBoundary = new InterbankBoundary();
 
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {	//Vi pham nguyen tac Stamp Coupling
