@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
@@ -14,6 +15,7 @@ import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -28,6 +30,9 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private ImageView loadingImage;
 
 	private Invoice invoice;
+
+	@FXML
+	private VBox paymentMethod;
 
 	@FXML
 	private Label pageTitle;
