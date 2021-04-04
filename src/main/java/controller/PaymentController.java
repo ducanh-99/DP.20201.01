@@ -8,6 +8,7 @@ import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
 import entity.cart.Cart;
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
@@ -23,10 +24,11 @@ import subsystem.InterbankSubsystem;
  */
 public class PaymentController extends BaseController {
 
+	private SimpleCardFactory cardFactory = new SimpleCardFactory();
 	/**
 	 * Represent the card used for payment
 	 */
-	private CreditCard card;
+	private Card card;
 
 	/**
 	 * Represent the Interbank subsystem
@@ -86,12 +88,17 @@ public class PaymentController extends BaseController {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
-			this.card = new CreditCard(
-					cardNumber,
+			expirationDate = getExpirationDate(expirationDate);
+		    //Nen su dung Factory method o day vi co them phuong thuc thanh toan moi 
+//			this.card = new CreditCard(
+//					cardNumber,
+//					cardHolderName,
+//					getExpirationDate(expirationDate),
+//					Integer.parseInt(securityCode));
+			this.card = cardFactory.createCard("CreditCard", cardNumber,
 					cardHolderName,
-					getExpirationDate(expirationDate),
-					Integer.parseInt(securityCode));
-
+					expirationDate,
+					securityCode);
 			this.interbank = new InterbankSubsystem();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 
