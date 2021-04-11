@@ -30,9 +30,11 @@ import subsystem.InterbankSubsystem;
 */
 public class PaymentController extends BaseController {
 
+
 	private SimpleCardFactory cardFactory = new SimpleCardFactory();
 	//Vi pham nguyen tac temproral cohession: Viec kiem tra ngay het han cua the se duoc thuc hien truoc khi thanh toan
 	//nhung 2 method nay ko su dung du lieu cua nhau nen co the tach 2 class rieng biet
+
 	/**
 	 * Represent the card used for payment
 	 */
