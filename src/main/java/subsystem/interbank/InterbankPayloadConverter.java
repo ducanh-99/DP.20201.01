@@ -30,7 +30,7 @@ public class InterbankPayloadConverter {
         }
         return instance;
     }
-    String convertToRequestPayload(CreditCard card, int amount, String contents) {
+    String convertToRequestPayload(Card card, int amount, String contents) {
         Map<String, Object> transaction = new MyMap();
 
         try {
