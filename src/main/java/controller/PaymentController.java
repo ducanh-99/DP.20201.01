@@ -70,6 +70,10 @@ public class PaymentController extends BaseController {
 		try {
 			month = Integer.parseInt(strs[0]);
 			year = Integer.parseInt(strs[1]);
+			/**
+			 * author: Ducanh
+			 * Clean code: tạo 1 level of abstraction bằng chuyển logic valid tháng năm thành method 
+			 */
 			if (isValidMonthandYear(month, year)) {
 				throw new InvalidCardException();
 			}
