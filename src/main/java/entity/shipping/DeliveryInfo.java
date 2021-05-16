@@ -3,6 +3,8 @@ package entity.shipping;
 import entity.order.Order;
 import org.example.DistanceCalculator;
 
+import common.interfaces.DistanceInterface;
+
 /*
     SOLID: Vi phạm nguyên lý OCP vì method calculateShippingFee mới chỉ tính 1 cách
     thành tiền, tính phí có nhiều cách, hoặc sử dụng nhiều lib khác
@@ -14,21 +16,22 @@ public class DeliveryInfo {
     protected String province;
     protected String address;
     protected String shippingInstructions;
-    protected DistanceCalculator distanceCalculator;
+    protected DistanceInterface distanceInterface;
+    private static final double MULTIPLIER = 1.2;
 
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceInterface distanceInterface) {
         this.name = name;
         this.phone = phone;
         this.province = province;
         this.address = address;
         this.shippingInstructions = shippingInstructions;
-        this.distanceCalculator = distanceCalculator;
+        this.distanceInterface = distanceInterface ;	
     }
 
     public int calculateShippingFee(Order order) {	//Vi pham nguyen tac Stamp Coupling
     //boi vi truyen doi tuong order vao nhung khong su dung cac thuoc tinh cua doi tuong nay
-        int distance = distanceCalculator.calculateDistance(address, province);
-        return (int) (distance * 1.2);
+        int distance = distanceInterface.calculateDistance(address, province);
+        return (int) (distance * MULTIPLIER);
     }
 
     public String getName() {
