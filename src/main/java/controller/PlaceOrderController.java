@@ -7,6 +7,7 @@ import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderItem;
 import entity.shipping.DeliveryInfo;
+import entity.shipping.LastestDistanceCalculate;
 import entity.shipping.ShippingConfigs;
 import helper.Validate;
 
@@ -77,7 +78,7 @@ public class PlaceOrderController extends BaseController {
                 String.valueOf(info.get("province")),
                 String.valueOf(info.get("address")),
                 String.valueOf(info.get("instructions")),
-                new DistanceCalculator());
+                new LastestDistanceCalculate());
         System.out.println(deliveryInfo.getProvince());
         return deliveryInfo;
     }
