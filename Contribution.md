@@ -36,3 +36,10 @@ stt | class | explan
 --- | --- | --- |
 1 | PlaceOrderController | Large class, chuyển các method ko liên quan sang package helper, class Validate để xử lý validate
 2 | AuthenticationController | Large class, chuyển method xử lý md5 và trong class helper.Security 
+
+## Observer Design Pattern
+
+Subteam 2: Nguyễn Đức Anh Contribution
+stt | class | explan
+--- | --- | --- |
+1 | CartScreenHandler và MediaHandler | CartScreenHandler là lớp Observer MediaHandler là lớp Subject giúp cho việc update Cart
