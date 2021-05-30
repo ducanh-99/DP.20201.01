@@ -17,7 +17,7 @@ public class DeliveryInfo {
 	protected String province;
 	protected String address;
 	protected String shippingInstructions;
-	protected DistanceInterface distanceInterface;
+	protected DistanceAdapter distanceAdapter;
 	private static final double MULTIPLIER = 1.2;
 
 	public DeliveryInfo() {
@@ -31,13 +31,13 @@ public class DeliveryInfo {
 		this.province = province;
 		this.address = address;
 		this.shippingInstructions = shippingInstructions;
-		this.distanceInterface = distanceInterface;
+		this.distanceAdapter = new DistanceAdapter(distanceInterface);
 	}
 
 	public int calculateShippingFee(Order order) { // Vi pham nguyen tac Stamp Coupling
 		// boi vi truyen doi tuong order vao nhung khong su dung cac thuoc tinh cua doi
 		// tuong nay
-		int distance = distanceInterface.calculateDistance(address, province);
+		int distance = distanceAdapter.calculateDistance(address, province);
 		return (int) (distance * MULTIPLIER);
 	}
 
