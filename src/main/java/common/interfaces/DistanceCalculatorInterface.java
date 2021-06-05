@@ -1,6 +1,6 @@
 package common.interfaces;
 
 
-public interface DistanceInterface {
+public interface DistanceCalculatorInterface {
 	public int calculateDistance(String address, String province);
 }

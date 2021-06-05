@@ -2,13 +2,13 @@ package entity.shipping;
 
 import org.example.DistanceCalculator;
 
-import common.interfaces.DistanceInterface;
+import common.interfaces.DistanceCalculatorInterface;
 
 public class DistanceAdapter implements CalculatorDistance {
 	
-	private DistanceInterface distanceInterface;
+	private DistanceCalculatorInterface distanceInterface;
 	
-	public DistanceAdapter(DistanceInterface distanceInterface) {
+	public DistanceAdapter(DistanceCalculatorInterface distanceInterface) {
 		// TODO Auto-generated constructor stub
 		this.distanceInterface = distanceInterface;
 	}
