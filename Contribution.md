@@ -23,6 +23,16 @@ Subteam 2 : Nguyen Duc Anh Contribution
 stt | class | explan
 --- | --- | --- |
 1 | InterbankPayloadConverter | Không giữa các số trong chương trình, chuyển các mã code "01" đến "07" thành hằng
-2 |
+2 |entity.db.AIMSDB | Thay đổi các string có sẵn bằng các hằng số
+3 | controller.PaymentController | Phương thức getExpirationDate đang ở mức 2 level of abstraction chuyển thành 1 level
+4 | controller.ViewCartController | Sử dụng 1 dòng để return, bỏ qua một biến subtotal
 
 [Xem đóng góp](https://docs.google.com/document/d/1-voyUEHkCD-C_3M4Oq6uI08dBzfmziVxGPpPU1EjUBQ/edit)
+
+## Clean code 3: Clean Class
+
+Subteam 2 : Nguyen Duc Anh Contribution
+stt | class | explan
+--- | --- | --- |
+1 | PlaceOrderController | Large class, chuyển các method ko liên quan sang package helper, class Validate để xử lý validate
+2 | AuthenticationController | Large class, chuyển method xử lý md5 và trong class helper.Security 
