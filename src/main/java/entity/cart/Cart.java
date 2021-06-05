@@ -10,10 +10,18 @@ import entity.media.Media;
 public class Cart {
     //Vi pham implement singleton: Declare a single private static instance of the class: chi co 1 gio hang nen cart phai la static
     // Content coupling: CartItem chưa
+    private static Cart cart;
     private List<CartItem> lstCartItem;
 
-    public Cart() {
+    private Cart() {
         lstCartItem = new ArrayList<>();
+    }
+
+    public static Cart getInstance(){
+        if(null == cart){
+            cart = new Cart();
+        }
+        return cart;
     }
 
     public void addCartMedia(CartItem cm){
