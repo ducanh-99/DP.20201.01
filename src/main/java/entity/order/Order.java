@@ -1,5 +1,6 @@
 package entity.order;
 
+import controller.FactoryOrderItem;
 import controller.SessionInformation;
 import entity.cart.Cart;
 import entity.cart.CartItem;
@@ -27,6 +28,7 @@ public class Order {
 
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
+        FactoryOrderItem factoryOrderItem = new FactoryOrderItem();
         for (Object object : SessionInformation.cartInstance.getListMedia()) {
             CartItem cartItem = (CartItem) object;
             //Them vao src.main.java.controller.FactoryOrderItem.java
@@ -38,10 +40,11 @@ public class Order {
             //                    cartItem.getPrice());
             //    }
             //}
-            OrderItem orderItem = new OrderItem(cartItem.getMedia(),    //nen su dung phuong thuc FactoryOrderItem nhu tren
-                    //vi sau nay co them chuc nang xem chi tiet san pham
-                    cartItem.getQuantity(),
-                    cartItem.getPrice());
+//            OrderItem orderItem = new OrderItem(cartItem.getMedia(),    //nen su dung phuong thuc FactoryOrderItem nhu tren
+//                    //vi sau nay co them chuc nang xem chi tiet san pham
+//                    cartItem.getQuantity(),
+//                    cartItem.getPrice());
+            OrderItem orderItem = factoryOrderItem.orderItem(cartItem);
             orderItems.add(orderItem);
         }
         this.orderMediaList = Collections.unmodifiableList(orderItems);
