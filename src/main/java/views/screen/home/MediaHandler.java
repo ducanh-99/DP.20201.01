@@ -21,6 +21,7 @@ import javafx.scene.image.ImageView;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
+import views.screen.detail.MediaDetailAbstract;
 import views.screen.popup.PopupScreen;
 
 public class MediaHandler extends FXMLScreenHandler implements Observable {
@@ -43,7 +44,7 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
 	@FXML
 	protected Button addToCartBtn;
 
-	private MediaDetailInterface mediaDetail;
+	private MediaDetailAbstract mediaDetail;
 
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
 	private Media media;
