@@ -2,13 +2,8 @@ package views.screen.detail;
 
 import common.interfaces.MediaDetailInterface;
 
-public class BookDetail implements MediaDetailInterface{
+public class BookDetail extends MediaDetailAbstract{
 
-	@Override
-	public void detail() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void viewCommon() {
