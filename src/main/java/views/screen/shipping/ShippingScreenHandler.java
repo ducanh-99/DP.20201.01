@@ -111,7 +111,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 	}
 
 	private void CreateInvoiceScreen() throws IOException {
-		Invoice invoice = getBController().createInvoice(order);
+		Invoice invoice = getBaseController().createInvoice(order);
 		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, ViewsConfig.INVOICE_SCREEN_PATH, invoice);
 		InvoiceScreenHandler.setPreviousScreen(this);
 		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
