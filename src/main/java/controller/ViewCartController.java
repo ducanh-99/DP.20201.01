@@ -23,10 +23,6 @@ public class ViewCartController extends BaseController{
      * @return subtotal
      */
     public int getCartSubtotal(){
-        /**
-         * autho: Ducanh
-         * Clean code: data-refactoring move an expression inline
-         */
         return SessionInformation.cartInstance.calSubtotal();
     }
 
