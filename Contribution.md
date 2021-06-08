@@ -8,6 +8,12 @@
   | 2   | InterbankPayloadConverter | là một lớp ngoài nên chỉ cần Singleton                   |
 
 ## Factory Method
+- Subteam 1: Le Xuan An
+
+stt | class | explan
+--- | --- | --- |
+1 | SimpleCardFactory, Card  | Khi thêm một phương thức thanh toán mới. Việc sử dụng Factory method giúp việc tạo một đối tượng thẻ mới đơn giản hơn.  
+
 
 ## Template Method
 

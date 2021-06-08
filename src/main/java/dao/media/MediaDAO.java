@@ -16,7 +16,7 @@ public class MediaDAO {
 
     //Vi pham nguyen tac Logical Cohesion: getAllMedia va getMediaById cung logic la lay thong tin ve media nhung 2 method
     //nay ko su dung du lieu cua nhau nen co the tach ra 2 class khac nhau
-    public List getAllMedia() throws SQLException {
+    public List getAllMedia() throws SQLException {//Vi pham nguyen ly LSP: 3 class BookDAO, CDDAO,DVDDAO ko the lay duoc tat ca Book, CD, DVD
         Statement stm = AIMSDB.getConnection().createStatement();
         ResultSet res = stm.executeQuery("select * from Media");
         ArrayList medium = new ArrayList<>();

@@ -1,5 +1,6 @@
 package entity.order;
 
+import controller.FactoryOrderItem;
 import controller.SessionInformation;
 import entity.cart.Cart;
 import entity.cart.CartItem;
@@ -46,6 +47,7 @@ public class Order {
 
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
+        FactoryOrderItem factoryOrderItem = new FactoryOrderItem();
         for (Object object : SessionInformation.cartInstance.getListMedia()) {
             CartItem cartItem = (CartItem) object;
             //Them vao src.main.java.controller.FactoryOrderItem.java

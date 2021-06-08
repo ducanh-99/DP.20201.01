@@ -64,12 +64,18 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 	}
 
 	protected void setupData(Object dto) throws Exception {
+		//Strategy Pattern: Vi rat nhieu class override lai phuong thuc nay nen can phai
+		//tao 1 class setUp, ben trong co cac phuong thuc setupData, setupFunctionality, setMediaInfo va cho class nay override
+		//lai cac phuong thuc setup do
 		this.order = (Order) dto;
 		this.province.getItems().addAll(ShippingConfigs.PROVINCES);
 		this.province.getSelectionModel().select(ShippingConfigs.RUSH_SUPPORT_PROVINCES_INDEX[0]);
 	}
 
 	protected void setupFunctionality() throws Exception {
+		//Strategy Pattern: Vi rat nhieu class override lai phuong thuc nay nen can phai
+		//tao 1 class setUp, ben trong co cac phuong thuc setupData, setupFunctionality, setMediaInfo va cho class nay override
+		//lai cac phuong thuc setup do
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 		name.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
 			if(newValue && firstTime.get()){

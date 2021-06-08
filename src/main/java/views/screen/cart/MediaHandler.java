@@ -75,6 +75,9 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
 	}
 
 	private void setMediaInfo() {
+		//Strategy Pattern: Vi rat nhieu class override lai phuong thuc nay nen can phai
+		//tao 1 class setUp, ben trong co cac phuong thuc vd nhu setupData, setupFunctionality, setMediaInfo,... va cho class nay override
+		//lai cac phuong thuc setup do
 		title.setText(cartItem.getMedia().getTitle());
 		price.setText(ViewsConfig.getCurrencyFormat(cartItem.getPrice()));
 		File file = new File(cartItem.getMedia().getImageURL());
@@ -128,11 +131,12 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
 			} catch (SQLException e1) {
 				throw new MediaUpdateException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
 			}
-			
+
 		});
 		spinnerFX.setAlignment(Pos.CENTER);
 		spinnerFX.getChildren().add(this.spinner);
 	}
+
 
 	@Override
 	public void attach(Observer observer) {
@@ -154,3 +158,4 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
 		listObserver.forEach(observer -> observer.update(this));
 	}
 }
+
