@@ -1,5 +1,11 @@
 ## SOLID
 
+Subteam 1: Nguyen Dinh Quang Anh Contribution
+| stt | class                    | explan                                                                                             |
+| --- | ------------------------ | ---------------------------------------------------------------------------------------------------|
+| 1   | MediaDAO | Vi phạm nguyên lý LSP: 3 class BookDAO, CDDAO, DVDDAO ko thể lấy được tất cả Books, CD,DVDs giống như lớp MediaDAO |
+| 2   | payment/Card.java | OCP: Nếu muốn thêm phương thức thanh toán mới thì phải thêm interface GeneralPayment và implement các method |
+
 Subteam 2: Nguyễn Mạnh Cường Contribution
 
 | stt | class                    | explan                                                                                                                                                        |
@@ -12,6 +18,12 @@ Subteam 2: Nguyễn Mạnh Cường Contribution
 | 6   | PaymentTransaction       | DIP Thay thế lớp Card cho lớp CreditCard                                                                                                                      |
 
 ## Clean code
+
+Subteam 1: Nguyễn Đình Quang Anh Contribution
+| stt | class              | explan                               |
+| --- | ------------------ | ------------------------------------ |
+| 1   | ShippingConfigs | 22, 48 nên đặt tên gợi nhớ chứ ko nên truyền thẳng vào hàm |
+
 
 Subteam 2: Nguyễn Mạnh Cường Contribution
 
@@ -38,6 +50,11 @@ stt | class | explan
 
 ## Clean code 3: Clean Class
 
+Subteam 1: Nguyen Dinh Quang Anh Contribution
+stt | class | explan
+--- | --- | --- |
+1 | MediaDAO | getMediaById được sử dụng rất nhiều lần bởi client -> Tách ra thành interface và implement lại trong MediaDAO để thỏa mãn Interface-Level Refactoring
+
 Subteam 2 : Nguyen Duc Anh Contribution
 stt | class | explan
 --- | --- | --- |
@@ -60,6 +77,12 @@ stt | class | explan
 | stt | class                   | explan                                                                                                                 |
 | --- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | 1   | SimpleCardFactory, Card | Khi thêm một phương thức thanh toán mới. Việc sử dụng Factory method giúp việc tạo một đối tượng thẻ mới đơn giản hơn. |
+
+- Subteam1: Nguyen Dinh Quang Anh Contribution
+  | stt | class                   | explan                                                                                                                 |
+  | --- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+  | 1   | order/Order.java | client ko nên new OrderItem mà việc này nên dành cho Factory Method, trong class FactoryOrderItem() sẽ trả về OrderItem cho client |
+
 
 ## Template Method
 
