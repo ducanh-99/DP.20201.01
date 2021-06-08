@@ -23,7 +23,7 @@ public class Order {
     private int tax;
     private List orderMediaList;
     private State state;
-    
+
     public State getState() {
 		return state;
 	}
@@ -40,7 +40,7 @@ public class Order {
         this.tax = 0;
         this.state = new OrderingState();
     }
-    
+
     public void cancelOrder() {
     	this.changeState(new CancelState());
     }
@@ -63,7 +63,9 @@ public class Order {
 //                    //vi sau nay co them chuc nang xem chi tiet san pham
 //                    cartItem.getQuantity(),
 //                    cartItem.getPrice());
-            OrderItem orderItem = factoryOrderItem.orderItem(cartItem);
+            OrderItem orderItem = FactoryOrderItem.orderItem(cartItem.getMedia(),
+                    cartItem.getQuantity(),
+                    cartItem.getPrice());
             orderItems.add(orderItem);
         }
         this.orderMediaList = Collections.unmodifiableList(orderItems);
@@ -105,3 +107,4 @@ public class Order {
         return this.subtotal + this.tax + this.shippingFees;
     }
 }
+
