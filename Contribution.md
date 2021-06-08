@@ -60,6 +60,7 @@ Subteam 1: Le Xuan An Contribution
 stt | class | explan
 --- | --- | --- |
 1 | InterbankPayloadConverter, DateController| Vì hàm getToday độc lập về mặt dữ liệu trong class InterbankPayloadConverter nên đưa vào class DateController rồi cho InterbankPayloadConverter gọi đến. Làm như vậy sẽ khiến class InterbankPayloadConverter đỡ cồng kềnh hơn|
+
 Subteam 2 : Nguyen Duc Anh Contribution
 stt | class | explan
 --- | --- | --- |
