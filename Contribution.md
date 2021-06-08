@@ -65,3 +65,29 @@ Subteam 2: Nguyễn Đức Anh Contribution
 stt | class | explan
 --- | --- | --- |
 1 | Order, State | Lớp Oder được coi là Client có thêm method setState để chỉnh sửa trạng thái, State đóng vai trò là inteface, các State riêng biệt của Order được implements từ State. Order chỉ cần setState các class đã được implements tương ứng với mỗi state của order.
+
+## SOLID
+Subteam 2: Nguyễn Mạnh Cường Contribution
+
+
+stt | class | explan
+--- | --- | --- |
+1 | AuthenticationController  | SRP AuthenticationController thực hiện một lúc nhiều method nên tách riêng một class UserController chứa các phương thức login(), logout(), getMainUser(),...
+2 | PaymentController  | SRP chuyển thành method trong class Validate để tái sử dụng
+3 | PaymentTransaction | OCP tạo 1 class mới là GeneralPayment, và cho Card implement GeneralPayment
+4 | BaseController  | LSP sử dụng các class khác để kế thừa cho những lớp dùng BaseController kế thừa
+5 | BaseScreenHandle  | ISP Tách ra mộ class riêng  PreviousScreenHandler có 2 phương thức setPreviousScreen, getPreviousScreen
+6 | PaymentTransaction  | DIP Thay thế lớp Card cho lớp CreditCard
+
+
+## Clean code
+
+Subteam 2: Nguyễn Mạnh Cường Contribution
+
+stt | class | explan
+--- | --- | --- |
+1 | InterbankSubsystem  | ctrl -> interbankSubsystemController
+2 | PaymentController  | isValidMonthAndYear ->
+isValidTimeOrder
+
+
