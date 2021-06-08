@@ -43,3 +43,10 @@ Subteam 2: Nguyễn Đức Anh Contribution
 stt | class | explan
 --- | --- | --- |
 1 | CartScreenHandler và MediaHandler | CartScreenHandler là lớp Observer MediaHandler là lớp Subject giúp cho việc update Cart
+
+## State Design Patter
+
+Subteam 2: Nguyễn Đức Anh Contribution
+stt | class | explan
+--- | --- | --- |
+1 | Order, State | Lớp Oder được coi là Client có thêm method setState để chỉnh sửa trạng thái, State đóng vai trò là inteface, các State riêng biệt của Order được implements từ State. Order chỉ cần setState các class đã được implements tương ứng với mỗi state của order.
