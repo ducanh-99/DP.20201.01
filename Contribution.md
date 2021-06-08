@@ -55,6 +55,11 @@ stt | class | explan
 --- | --- | --- |
 1 | MediaDAO | getMediaById được sử dụng rất nhiều lần bởi client -> Tách ra thành interface và implement lại trong MediaDAO để thỏa mãn Interface-Level Refactoring
 
+Subteam 1: Le Xuan An Contribution
+
+stt | class | explan
+--- | --- | --- |
+1 | InterbankPayloadConverter, DateController| Vì hàm getToday độc lập về mặt dữ liệu trong class InterbankPayloadConverter nên đưa vào class DateController rồi cho InterbankPayloadConverter gọi đến. Làm như vậy sẽ khiến class InterbankPayloadConverter đỡ cồng kềnh hơn|
 Subteam 2 : Nguyen Duc Anh Contribution
 stt | class | explan
 --- | --- | --- |
@@ -62,7 +67,11 @@ stt | class | explan
 2 | AuthenticationController | Large class, chuyển method xử lý md5 và trong class helper.Security
 
 ## Singleton
+- Subteam 1: Le Xuan An Contribution
 
+stt | class | explan
+--- | --- | --- |
+1 | Invoice| Mỗi 1 lần mua hàng chỉ cần 1 hóa đơn nếu thay đổi gì chỉ cần up date bằng việc gọi đến getInstance và truyền vào đối tượng order để cập nhật. Tránh trường hợp hóa đơn mở rộng nhiều trường dữ liệu khởi tạo mất thời gian|
 - Subteam 2 : Nguyen Duc Anh Contribution
 
   | stt | class                     | explan                                                   |

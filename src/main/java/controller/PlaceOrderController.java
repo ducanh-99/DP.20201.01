@@ -58,7 +58,7 @@ public class PlaceOrderController extends BaseController {
      * @return Invoice
      */
     public Invoice createInvoice(Order order) {
-        return new Invoice(order);
+        return Invoice.getInstanse(order);
     }
 
     /**
