@@ -1,6 +1,7 @@
 package helper;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -64,5 +65,11 @@ public class Validate {
 		Pattern pattern = Pattern.compile(patternString);
 		Matcher matcher = pattern.matcher(address);
 		return matcher.matches();
+	}
+	public boolean validateTimeOrder(int month, int year){
+		if (month < 1 || month > 12 || year < Calendar.getInstance().get(Calendar.YEAR) % 100 || year > 100) {
+			return false;
+		}
+		return true;
 	}
 }
