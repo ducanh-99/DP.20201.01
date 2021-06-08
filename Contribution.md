@@ -7,7 +7,15 @@
   | 1   | Cart                      | 1 shop chỉ cần 1 cart nên có thể dùng Singleton cho Cart |
   | 2   | InterbankPayloadConverter | là một lớp ngoài nên chỉ cần Singleton                   |
 
-## Factory Method và Template Method
+## Factory Method
+
+## Template Method
+
+- Subteam 2 : Nguyen Duc Anh Contribution
+
+  | stt | class               | explan                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+  | --- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 1   | MediaDetailAbstract | Khi thêm một yêu cầu mới là xem chi tiết sản phẩm, với việc xem chi tiết ta có các bước rõ ràng từng bước để xem nên em sử dụng Template, design là sử dụng MediaDetailAbstract là lớp abstract public một method detail và MediaHandler sẽ liên kết với class này, tùy từng loại Media ta chỉ cần kế thừa MediaDetailAbstract và implements các phương thức abstract. MediaHandler mỗi khi gặp một loại class thì chỉ cần truyền và class tương ứng |
 
 ## Clean code
 
@@ -35,7 +43,7 @@ Subteam 2 : Nguyen Duc Anh Contribution
 stt | class | explan
 --- | --- | --- |
 1 | PlaceOrderController | Large class, chuyển các method ko liên quan sang package helper, class Validate để xử lý validate
-2 | AuthenticationController | Large class, chuyển method xử lý md5 và trong class helper.Security 
+2 | AuthenticationController | Large class, chuyển method xử lý md5 và trong class helper.Security
 
 ## Observer Design Pattern
 
@@ -44,7 +52,14 @@ stt | class | explan
 --- | --- | --- |
 1 | CartScreenHandler và MediaHandler | CartScreenHandler là lớp Observer MediaHandler là lớp Subject giúp cho việc update Cart
 
-## State Design Patter
+## State Design Pattern
+
+Subteam 2: Nguyễn Đức Anh Contribution
+stt | class | explan
+--- | --- | --- |
+1 | Order, State | Lớp Oder được coi là Client có thêm method setState để chỉnh sửa trạng thái, State đóng vai trò là inteface, các State riêng biệt của Order được implements từ State. Order chỉ cần setState các class đã được implements tương ứng với mỗi state của order.
+
+## Adapter Design Pattern
 
 Subteam 2: Nguyễn Đức Anh Contribution
 stt | class | explan
