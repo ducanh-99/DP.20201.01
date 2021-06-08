@@ -11,14 +11,11 @@ import common.exception.InvalidDeliveryInfoException;
 
 public class Validate {
 	private static Validate single_instance = null;
-
 	// variable of type String
 	public String s;
-
 	// private constructor restricted to this class itself
 	private Validate() {
 	}
-
 	// static method to create instance of Singleton class
 	public static Validate getInstance() {
 		if (single_instance == null)
@@ -26,7 +23,6 @@ public class Validate {
 
 		return single_instance;
 	}
-
 	public void validateDeliveryInfo(HashMap<String, String> info)
 			throws InterruptedException, IOException, InvalidDeliveryInfoException {
 		if (validatePhoneNumber(info.get("phone")) || validateName(info.get("name"))
@@ -35,7 +31,6 @@ public class Validate {
 		else
 			throw new InvalidDeliveryInfoException();
 	}
-
 	public boolean validatePhoneNumber(String phoneNumber) {
 		if (phoneNumber.length() != 10)
 			return false;
@@ -48,7 +43,6 @@ public class Validate {
 		}
 		return true;
 	}
-
 	public boolean validateName(String name) {
 		if (Objects.isNull(name))
 			return false;
@@ -57,7 +51,6 @@ public class Validate {
 		Matcher matcher = pattern.matcher(name);
 		return matcher.matches();
 	}
-
 	public boolean validateAddress(String address) {
 		if (Objects.isNull(address))
 			return false;
