@@ -9,7 +9,7 @@
 
 ## Contribution
 
-Được đặt trong file Contribution của nhóm
+Được đặt trong file [Contribution](Contribution.md) của nhóm
 ## Link drive của nhóm
 
 [Link Drive: Báo cáo, Presetation, Video](https://drive.google.com/drive/folders/1H57cviWPkO1iKE4HnHHfr72_k01Mm1Pj)
